@@ -13,7 +13,7 @@
     } else {
         $('.backtop').removeClass('reveal');
     }
-});
+	});
  
 	$('.portfolio-single-slider').slick({
 		infinite: true,
@@ -192,5 +192,13 @@
             myShuffle.filter(input.value);
         }
     });
+
+		// Bind to the submit event of our form
+		$("#create").submit(function(event){
+
+			console.log(event)
+			
+
+		});
 
 })(jQuery);
