@@ -190,6 +190,25 @@
     
     <script src="js/script.js"></script>
     <script src="js/contact.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script>
+
+       
+
+        var config = {
+          method: 'get',
+          url: 'https://sportsfree-dev.herokuapp.com//professor',
+          headers: { }
+        };
+
+        axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      </script>
 
   </body>
   </html>
