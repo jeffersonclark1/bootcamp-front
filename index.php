@@ -1,3 +1,6 @@
+<?php
+ header("Access-Control-Allow-Origin: *");
+ ?>
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -197,8 +200,7 @@
 
         var config = {
           method: 'get',
-          url: 'https://sportsfree-dev.herokuapp.com//professor',
-          headers: { }
+          url: 'https://sportsfree-dev.herokuapp.com/professor'
         };
 
         axios(config)
