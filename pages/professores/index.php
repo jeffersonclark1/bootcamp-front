@@ -57,19 +57,23 @@
 <section class="section appoinment">
 	<div class="container">
 		<div class="row">
-			<label>Professores</label>
+			<div class="col-md-9">
+				<label>Professores</label>
+			</div>
+			<div class="col-md-3 py-3">
+				<a href="cadastro.php" class="btn btn-main btn-round-full">Cadastrar professor</a>
+			</div>				
 			<table id="tableProfessores" name="tableProfessores" class="table">
 				<thead>
 					<tr>
 						<th scope="col">#</th>
 						<th scope="col">Nome professore</th>
-						<th class="text-center" scope="col">Total de alunos</th>
-						<th class="text-center" scope="col">Total de esportes</th>
-						<th class="text-center" scope="col">Ultima doação</th>
+						<th class="text-center" scope="col">#</th>
+						<th class="text-center" scope="col">#</th>
 						<th class="text-center" scope="col">#</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody id="tbodyList">
 				</tbody>
 			</table>
 		</div>
@@ -154,15 +158,17 @@
         });
 			}			
 			
-			function excluirProfessor(teste){
+			function excluirProfessor(id){
 				var config = {
 					method: 'delete',
-					url: 'https://sportsfree-dev.herokuapp.com/professor/9',
+					url: 'https://sportsfree-dev.herokuapp.com/professor/'+id,
 					headers: { }
 				};
 				axios(config)
         .then(function (response) {
-					alert('excluido com sucesso');
+					$("#tbodyList").empty();
+					loader();
+					alert('excluido com sucesso');					
 				})
         .catch(function (error) {
           console.log(error);

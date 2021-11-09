@@ -56,7 +56,7 @@
 		<div class="row align-items-center">
 			<div class="col-lg col-md">
 				<div class="appoinment-wrap mt-5 mt-lg-0">
-					<h2 class="mb-2 title-color">Lorem Ipsum</h2>
+					<h2 class="mb-2 title-color">Alteracao</h2>
 					<p class="mb-4">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
 					</p>
             <form id="update" name="update" class="appoinment-form" >
@@ -128,8 +128,7 @@
                 </div>
                 <div class="col-lg-4">
                   <div class="form-group">
-                    <input name="complementoFake" id="complementoFake" type="text" class="form-control" placeholder="Complemento" disabled required>
-                    <input name="complemento" id="complemento" type="hidden">
+                    <input name="complemento" id="complemento" type="text" class="form-control" placeholder="Complemento">
                   </div>
                 </div>
               </div>
@@ -183,7 +182,14 @@
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
+
 <script>
+  $(document).ready(function() {
+    $('#cpf').mask('999.999.999-99');
+    $('#rg').mask('99999999-9');
+    $('#cep').mask('99999-999');
+  });
 
   loader();
 
@@ -204,6 +210,11 @@
       $("#cep").val(response.data.endereco.cep);
       $("#rg").val(response.data.rg);
       $("#cpf").val(response.data.cpf);
+      $("#ufFake").val(response.data.endereco.uf);
+      $("#ruaFake").val(response.data.endereco.rua);
+      $("#numeroFake").val(response.data.endereco.numero);
+      $("#cidadeFake").val(response.data.endereco.cidade);
+      $("#bairroFake").val(response.data.endereco.bairro);
       $("#uf").val(response.data.endereco.uf);
       $("#rua").val(response.data.endereco.rua);
       $("#numero").val(response.data.endereco.numero);
@@ -246,7 +257,8 @@
 
     axios(config)
     .then(function (response) {
-      console.log(JSON.stringify(response.data));
+      alert("Professor alterado com sucesso!")
+      window.location.href = "/bootcamp-front/pages/professores/";
     })
     .catch(function (error) {
       console.log(error);
