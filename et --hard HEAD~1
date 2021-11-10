@@ -1,0 +1,60 @@
+[33mcommit b86ada6bb3c87871cb23c178c5504077c920ce51[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: f0fca87 4c1a0bd
+Author: Jefferson Clark <jeffersonclarkti@gmail.com>
+Date:   Wed Nov 10 13:57:28 2021 -0300
+
+    Merge branch 'master' of github.com:jeffersonclark1/bootcamp-front
+
+[33mcommit f0fca87359dede8579801a9b120c7d9d8ea670bd[m
+Author: Jefferson Clark <jeffersonclarkti@gmail.com>
+Date:   Wed Nov 10 13:56:22 2021 -0300
+
+    Merge conflict
+
+[33mcommit 4c1a0bd35cee32e7205a67c38ceaac18f86bd76a[m
+Author: Jefferson Clark <jeffersonclarkti@gmail.com>
+Date:   Tue Nov 9 20:06:26 2021 -0300
+
+    Crud professor
+
+[33mcommit 46d92985162d4d3bca3be7c8a4a6dc83947addb1[m
+Author: Jefferson Clark <jeffersonclarkti@gmail.com>
+Date:   Tue Nov 9 17:00:52 2021 -0300
+
+    CEP
+
+[33mcommit 1cc0a5b0eaabc57607dfed649c3d91bd544f927d[m
+Author: Jefferson Clark <jeffersonclarkti@gmail.com>
+Date:   Tue Nov 9 16:14:25 2021 -0300
+
+    Visualizaçao, ediçao
+
+[33mcommit 191a3cfca810a94643041b411535c6a209251505[m
+Author: Jefferson Clark <jeffersonclarkti@gmail.com>
+Date:   Fri Nov 5 10:43:08 2021 -0300
+
+    ajuste
+
+[33mcommit 33dee17b5ead04986a47ac25ff8e708e3a25ec33[m
+Author: Jefferson Clark <jeffersonclarkti@gmail.com>
+Date:   Thu Nov 4 11:58:39 2021 -0300
+
+    teste
+
+[33mcommit 9156947ee0c02d88baf0e4512a2f707229f26116[m
+Author: Jefferson Clark <jeffersonclarkti@gmail.com>
+Date:   Wed Nov 3 17:46:18 2021 -0300
+
+    test heroku
+
+[33mcommit 29edd000afaf38313f3a2d103740b1d2eeeefcc0[m
+Author: Jefferson Clark <jeffersonclarkti@gmail.com>
+Date:   Tue Oct 19 15:26:32 2021 -0300
+
+    Update pages
+
+[33mcommit 4272c85dc190cbaa7ea6b7b9be0f94d18f4d19a9[m
+Author: Jefferson Clark <jeffersonclarkti@gmail.com>
+Date:   Wed Oct 6 16:46:48 2021 -0300
+
+    Init

@@ -28,7 +28,7 @@
 <header>
 	<nav class="navbar navbar-expand-lg navigation" id="navbar">
 		<div class="container">
-		 	 <a class="navbar-brand" href="index.html">
+		 	 <a class="navbar-brand" href="/bootcamp-front/">
 			  	<img src="../../images/logo.png" alt="" class="img-fluid w-50">
 			  </a>
 
@@ -39,7 +39,7 @@
 		  <div class="collapse navbar-collapse" id="navbarmain">
 			<ul class="navbar-nav ml-auto">
 			  <li class="nav-item active">
-				<a class="nav-link" href="index.html">Home</a>
+				<a class="nav-link" href="/bootcamp-front/">Home</a>
 			  </li>
 			   <li class="nav-item"><a class="nav-link" href="about.html">Seja um doador</a></li>
          <li class="nav-item"><a class="nav-link" href="about.html">Contatos</a></li>
@@ -58,18 +58,18 @@
 					<h2 class="mb-2 title-color">Cadastro</h2>
 					<p class="mb-4">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
 					</p>
-            <form id="create" name="create" class="appoinment-form needs-validation" novalidate>
+            <form id="create" name="create" class="appoinment-form">
               <div class="row">
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <input name="nome" id="nome" type="text" class="form-control" require placeholder="Nome completo" required>
+                    <input name="nome" id="nome" type="text" class="form-control" placeholder="Nome completo" required>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <input name="email" id="email" require type="text" class="form-control" placeholder="E-mail" required>
+                    <input name="email" id="email" type="text" class="form-control" placeholder="E-mail" required>
                   </div>
                 </div>
               </div>
@@ -93,19 +93,22 @@
                 </div>
                 <div class="col-lg-4">
                   <div class="form-group">
-                    <input name="cidade" id="cidade" type="text" class="form-control" placeholder="Cidade" required>
+                    <input name="cidadeFake" id="cidadeFake" type="text" class="form-control" placeholder="Cidade" disabled required>
+                    <input name="cidade" id="cidade" type="text">
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <div class="form-group">
-                    <input name="uf" id="uf" type="text" class="form-control" placeholder="UF" required>
+                    <input name="ufFake" id="ufFake" type="text" class="form-control" placeholder="UF" disabled required>
+                    <input name="uf" id="uf" type="text">
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <input name="rua" id="rua" type="text" class="form-control" placeholder="Endereço" required>
+                    <input name="ruaFake" id="ruaFake" type="text" class="form-control" placeholder="Endereço" required>
+                    <input name="rua" id="rua" type="text">
                   </div>
                 </div>
               </div>
@@ -117,7 +120,8 @@
                 </div>
                 <div class="col-lg-4">
                   <div class="form-group">
-                    <input name="bairro" id="bairro" type="text" class="form-control" placeholder="Bairro" required>
+                    <input name="bairroFake" id="bairroFake" type="text" class="form-control" placeholder="Bairro" required>
+                    <input name="bairro" id="bairro" type="text">
                   </div>
                 </div>
                 <div class="col-lg-4">
@@ -212,8 +216,6 @@
               "complemento": $("#complemento").val()
           }
         };
-
-        console.log(param)        
 
         const config = {
           method: 'POST',
