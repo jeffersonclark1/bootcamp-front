@@ -39,7 +39,7 @@
 		  <div class="collapse navbar-collapse" id="navbarmain">
 			<ul class="navbar-nav ml-auto">
 			  <li class="nav-item active">
-				<a class="nav-link" href="index.html">Home</a>
+				<a class="nav-link" href="/bootcamp-front/">Home</a>
 			  </li>
 			   <li class="nav-item"><a class="nav-link" href="about.html">Seja um doador</a></li>
          <li class="nav-item"><a class="nav-link" href="about.html">Contatos</a></li>

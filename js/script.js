@@ -193,12 +193,4 @@
         }
     });
 
-		// Bind to the submit event of our form
-		$("#create").submit(function(event){
-
-			console.log(event)
-			
-
-		});
-
 })(jQuery);
