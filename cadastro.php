@@ -11,15 +11,15 @@
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
 
   <!-- bootstrap.min css -->
-  <link rel="stylesheet" href="../../plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
   <!-- Icon Font Css -->
-  <link rel="stylesheet" href="../../plugins/icofont/icofont.min.css">
+  <link rel="stylesheet" href="plugins/icofont/icofont.min.css">
   <!-- Slick Slider  CSS -->
-  <link rel="stylesheet" href="../../plugins/slick-carousel/slick/slick.css">
-  <link rel="stylesheet" href="../../plugins/slick-carousel/slick/slick-theme.css">
+  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -29,7 +29,7 @@
 	<nav class="navbar navbar-expand-lg navigation" id="navbar">
 		<div class="container">
 		 	 <a class="navbar-brand" href="index.html">
-			  	<img src="../../images/logo.png" alt="" class="img-fluid w-50">
+			  	<img src="images/logo.png" alt="" class="img-fluid w-50">
 			  </a>
 
 		  	<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,79 +55,79 @@
 		<div class="row align-items-center">
 			<div class="col-lg col-md">
 				<div class="appoinment-wrap mt-5 mt-lg-0">
-					<h2 class="mb-2 title-color">Cadastro</h2>
+					<h2 class="mb-2 title-color">Lorem Ipsum</h2>
 					<p class="mb-4">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
 					</p>
             <form id="create" name="create" class="appoinment-form needs-validation" novalidate>
               <div class="row">
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <input name="nome" id="nome" type="text" class="form-control" require placeholder="Nome completo" required>
+                    <input name="nome" id="nome" type="text" class="form-control" require placeholder="Nome completo">
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <input name="email" id="email" require type="text" class="form-control" placeholder="E-mail" required>
+                    <input name="email" id="email" require type="text" class="form-control" placeholder="E-mail">
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <input name="cpf" id="cpf" type="text" class="form-control" placeholder="CPF" required>
+                    <input name="cpf" id="cpf" type="text" class="form-control" placeholder="CPF">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <input name="rg" id="rg" type="text" class="form-control" placeholder="RG" required>
+                    <input name="rg" id="rg" type="text" class="form-control" placeholder="RG">
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-4">
                   <div class="form-group">
-                    <input name="cep" id="cep" type="text" class="form-control" placeholder="CEP" required>
+                    <input name="cep" id="cep" type="text" class="form-control" placeholder="CEP">
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <div class="form-group">
-                    <input name="cidade" id="cidade" type="text" class="form-control" placeholder="Cidade" required>
+                    <input name="cidade" id="cidade" type="text" class="form-control" placeholder="Cidade">
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <div class="form-group">
-                    <input name="uf" id="uf" type="text" class="form-control" placeholder="UF" required>
+                    <input name="uf" id="uf" type="text" class="form-control" placeholder="UF">
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <input name="rua" id="rua" type="text" class="form-control" placeholder="Endereço" required>
+                    <input name="rua" id="rua" type="text" class="form-control" placeholder="Endereço">
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-4">
                   <div class="form-group">
-                    <input name="numero" id="numero" type="text" class="form-control" placeholder="Número" required>
+                    <input name="numero" id="numero" type="text" class="form-control" placeholder="Número">
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <div class="form-group">
-                    <input name="bairro" id="bairro" type="text" class="form-control" placeholder="Bairro" required>
+                    <input name="bairro" id="bairro" type="text" class="form-control" placeholder="Bairro">
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <div class="form-group">
-                    <input name="complemento" id="complemento" type="text" class="form-control" placeholder="Complemento" >
+                    <input name="complemento" id="complemento" type="text" class="form-control" placeholder="Complemento">
                   </div>
                 </div>
               </div>
               <button type="submit" class="btn btn-main btn-round-full">Registrar</button>
-              <a onclick="window.history.go(-1); return false;" class="btn btn-main btn-round-full">Cancelar</a>
+              <!-- <a class="btn btn-main btn-round-full" href="appoinment.html" >Registrar <i class="icofont-simple-right ml-2  "></i></a> -->
             </form>
         </div>
 			</div>
@@ -165,21 +165,21 @@
 
     
     <!-- Main jQuery -->
-    <script src="../../plugins/jquery/jquery.js"></script>
+    <script src="plugins/jquery/jquery.js"></script>
     <!-- Bootstrap 4.3.2 -->
-    <script src="../../plugins/bootstrap/js/popper.js"></script>
-    <script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../../plugins/counterup/jquery.easing.js"></script>
+    <script src="plugins/bootstrap/js/popper.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="plugins/counterup/jquery.easing.js"></script>
     <!-- Slick Slider -->
-    <script src="../../plugins/slick-carousel/slick/slick.min.js"></script>
+    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
     <!-- Counterup -->
-    <script src="../../plugins/counterup/jquery.waypoints.min.js"></script>
+    <script src="plugins/counterup/jquery.waypoints.min.js"></script>
     
-    <script src="../../plugins/shuffle/shuffle.min.js"></script>
-    <script src="../../plugins/counterup/jquery.counterup.min.js"></script>
+    <script src="plugins/shuffle/shuffle.min.js"></script>
+    <script src="plugins/counterup/jquery.counterup.min.js"></script>
     
-    <script src="../../js/script.js"></script>
-    <script src="../../js/contact.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/contact.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
@@ -189,7 +189,6 @@
       $(document).ready(function() {
           $('#cpf').mask('999.999.999-99');
           $('#rg').mask('99999999-9');
-          $('#cep').mask('99999-999');
       });
       // Attach a submit handler to the form
       $( "#create" ).submit(function( event ) {
@@ -213,49 +212,28 @@
           }
         };
 
-        console.log(param)        
+        console.log(param)
 
-        const config = {
-          method: 'POST',
-          url: 'https://sportsfree-dev.herokuapp.com/professor',
-					data: param
-        };
-
-        axios(config)
-        .then(function (response) {
-          alert('Professor cadastrado com sucesso!');
-          window.location.href = "/bootcamp-front/pages/professores/";
-        })
-        .catch(function (error) {
-          console.log(error);
-        });       
-
-      });
-
-      $("#cep").keyup(function(){
-        if($("#cep").val().length === 9){
-          const config = {
-            method: 'get',
-            url: `https://viacep.com.br/ws/${$("#cep").val()}/json/`
-          };
-          axios(config)
-          .then(function (response) {
-            $("#cidade").val(response.data.localidade);
-            $("#uf").val(response.data.uf);
-            $("#rua").val(response.data.logradouro);
-            $("#bairro").val(response.data.bairro);
-            $("#complemento").val(response.data.complemento);
-            $("#cidadeFake").val(response.data.localidade);
-            $("#ufFake").val(response.data.uf);
-            $("#ruaFake").val(response.data.logradouro);
-            $("#bairroFake").val(response.data.bairro);
-            $("#complementoFake").val(response.data.complemento);
-            $("#numero").focus();
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+        for (let i = 0; i < param.length; i++) {
+          console.log(i);
         }
+
+        
+
+        // const config = {
+        //   method: 'POST',
+        //   url: 'https://sportsfree-dev.herokuapp.com/professor',
+				// 	data: param
+        // };
+
+        // axios(config)
+        // .then(function (response) {
+        //   console.log(JSON.stringify(response.data));
+        // })
+        // .catch(function (error) {
+        //   console.log(error);
+        // });       
+
       });
       </script>
 
