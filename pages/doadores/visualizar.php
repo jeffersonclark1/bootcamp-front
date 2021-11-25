@@ -28,7 +28,7 @@
 <header>
 	<nav class="navbar navbar-expand-lg navigation" id="navbar">
 		<div class="container">
-		 	 <a class="navbar-brand" href="index.html">
+		 	 <a class="navbar-brand" href="/">
 			  	<img src="../../images/logo.png" alt="" class="img-fluid w-50">
 			  </a>
 
@@ -41,8 +41,8 @@
 			  <li class="nav-item active">
 				  <a class="nav-link" href="index.html">Home</a>
 			  </li>
-        <li class="nav-item"><a class="nav-link" href="/bootcamp-front/pages/professores/">Professores</a></li>
-        <li class="nav-item"><a class="nav-link" href="/bootcamp-front/pages/doadores/">Doadores</a></li>
+        <li class="nav-item"><a class="nav-link" href="/pages/professores/">Professores</a></li>
+        <li class="nav-item"><a class="nav-link" href="/pages/doadores/">Doadores</a></li>
 			</ul>
 		  </div>
 		</div>
