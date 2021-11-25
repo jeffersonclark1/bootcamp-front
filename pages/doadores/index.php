@@ -28,7 +28,7 @@
 <header>
 	<nav class="navbar navbar-expand-lg navigation" id="navbar">
 		<div class="container">
-		 	 <a class="navbar-brand" href="index.html">
+		 	 <a class="navbar-brand" href="/bootcamp-front/">
 			  	<img src="../../images/logo.png" alt="" class="img-fluid w-50">
 			  </a>
 
@@ -39,7 +39,7 @@
 		  <div class="collapse navbar-collapse" id="navbarmain">
 			<ul class="navbar-nav ml-auto">
 			  <li class="nav-item active">
-				<a class="nav-link" href="index.html">Home</a>
+					<a class="nav-link" href="/bootcamp-front/">Home</a>
 			  </li>
 				<li class="nav-item"><a class="nav-link" href="/bootcamp-front/pages/professores/">Professores</a></li>
         <li class="nav-item"><a class="nav-link" href="/bootcamp-front/pages/doadores/">Doadores</a></li>
@@ -57,16 +57,16 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9">
-				<label>Professores</label>
+				<label>Doadores</label>
 			</div>
 			<div class="col-md-3 py-3">
-				<a href="cadastro.php" class="btn btn-main btn-round-full">Cadastrar professor</a>
+				<a href="cadastro.php" class="btn btn-main btn-round-full">Cadastrar doador</a>
 			</div>				
 			<table id="tableProfessores" name="tableProfessores" class="table">
 				<thead>
 					<tr>
 						<th scope="col">#</th>
-						<th scope="col">Nome professores</th>
+						<th scope="col">Nome doador</th>
 						<th class="text-center" scope="col">#</th>
 						<th class="text-center" scope="col">#</th>
 						<th class="text-center" scope="col">#</th>
@@ -134,22 +134,18 @@
 			function loader(){
 				var config = {
           method: 'get',
-          url: 'https://sportsfree-dev.herokuapp.com/professor',
+          url: 'https://sportsfree-dev.herokuapp.com/doador',
           headers: { }
         };
 
         axios(config)
         .then(function (response) {
-					// for ( var i ; i < response.data.lenght ; i++ ){
-					// 	console.log(response.data[i]);
-					// }
 					for (var i = 0; i < response.data.length; i++) {
           	$("#tableProfessores").find('tbody').append(`<tr><th scope='row'>${response.data[i].id}</th>
 						<td>${response.data[i].nome}</td>
 						<td class='text-center'><a class='btn btn-main btn-round-full' href='visualizar.php?id=${response.data[i].id}'>Visualizar</a></td>
 						<td class='text-center'><a class='btn btn-main btn-round-full' href='editar.php?id=${response.data[i].id}'>Editar</a></td>
-						<td class='text-center'><button class='btn btn-main btn-round-full excluirProfessor' onclick='excluirProfessor("${response.data[i].id}")' >Excluir</button></td></tr>`);
-						// more statements
+						<td class='text-center'><button class='btn btn-main btn-round-full excluirDoador' onclick='excluirDoador("${response.data[i].id}")' >Excluir</button></td></tr>`);
 					}
         })
         .catch(function (error) {
@@ -157,10 +153,10 @@
         });
 			}			
 			
-			function excluirProfessor(id){
+			function excluirDoador(id){
 				var config = {
 					method: 'delete',
-					url: 'https://sportsfree-dev.herokuapp.com/professor/'+id,
+					url: 'https://sportsfree-dev.herokuapp.com/doador/'+id,
 					headers: { }
 				};
 				axios(config)

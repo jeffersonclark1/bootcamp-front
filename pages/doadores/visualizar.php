@@ -39,7 +39,7 @@
 		  <div class="collapse navbar-collapse" id="navbarmain">
 			<ul class="navbar-nav ml-auto">
 			  <li class="nav-item active">
-				<a class="nav-link" href="index.html">Home</a>
+				  <a class="nav-link" href="index.html">Home</a>
 			  </li>
         <li class="nav-item"><a class="nav-link" href="/bootcamp-front/pages/professores/">Professores</a></li>
         <li class="nav-item"><a class="nav-link" href="/bootcamp-front/pages/doadores/">Doadores</a></li>
@@ -67,9 +67,19 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-4">
                   <div class="form-group">
                     <input name="email" id="email" type="text" class="form-control" placeholder="E-mail" disabled>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <input name="redeSocial" id="redeSocial" type="text" class="form-control" placeholder="Rede social" disabled>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <input name="telefone" id="telefone" type="text" class="form-control" placeholder="Celular" disabled>
                   </div>
                 </div>
               </div>
@@ -193,16 +203,18 @@
 				$("#id").val(param);
 				const config = {
           method: 'get',
-          url: 'https://sportsfree-dev.herokuapp.com/professor/'+param,
+          url: 'https://sportsfree-dev.herokuapp.com/doador/'+param,
           headers: { }
         };
         axios(config)
         .then(function (response) {
 					$("#nome").val(response.data.nome);
-					$("#email").val(response.data.email);
+					$("#email").val(response.data.contato.email);
 					$("#cep").val(response.data.endereco.cep);
 					$("#rg").val(response.data.rg);
-					$("#cpf").val(response.data.cpf);
+					$("#cpf").val(response.data.cpfCnpj);
+          $("#redeSocial").val(response.data.contato.redeSocial);
+          $("#telefone").val(response.data.contato.telefones[0]);
 					$("#uf").val(response.data.endereco.uf);
 					$("#rua").val(response.data.endereco.rua);
 					$("#numero").val(response.data.endereco.numero);

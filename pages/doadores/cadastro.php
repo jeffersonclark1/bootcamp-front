@@ -39,7 +39,7 @@
 		  <div class="collapse navbar-collapse" id="navbarmain">
 			<ul class="navbar-nav ml-auto">
 			  <li class="nav-item active">
-				<a class="nav-link" href="index.html">Home</a>
+				  <a class="nav-link" href="/bootcamp-front/">Home</a>
 			  </li>
         <li class="nav-item"><a class="nav-link" href="/bootcamp-front/pages/professores/">Professores</a></li>
         <li class="nav-item"><a class="nav-link" href="/bootcamp-front/pages/doadores/">Doadores</a></li>
@@ -66,9 +66,19 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-4">
                   <div class="form-group">
                     <input name="email" id="email" type="text" class="form-control" placeholder="E-mail" required>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <input name="redeSocial" id="redeSocial" type="text" class="form-control" placeholder="Rede Social" required>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <input name="telefone" id="telefone" type="text" class="form-control" placeholder="Celular" required>
                   </div>
                 </div>
               </div>
@@ -186,6 +196,7 @@
         $('#cpf').mask('999.999.999-99');
         $('#rg').mask('99.999.999-9');
         $('#cep').mask('99999-999');
+        $('#telefone').mask('(99) 9 9999-9999');
     });
     // Attach a submit handler to the form
     $( "#create" ).submit(function( event ) {
@@ -195,9 +206,15 @@
 
       const param = {
         "nome": $("#nome").val(),
-        "email": $("#email").val(),
-        "cpf": $("#cpf").val(),
+        "cpfCnpj": $("#cpf").val(),
         "rg": $("#rg").val(),
+        "contato": {
+          "email": $("#email").val(),
+          "redeSocial": $("#redeSocial").val(),
+          "telefones": [
+            $("#telefone").val()
+          ]
+        },
         "endereco": {
             "cep": $("#cep").val(),
             "cidade": $("#cidade").val(),
@@ -211,13 +228,13 @@
 
       const config = {
         method: 'POST',
-        url: 'https://sportsfree-dev.herokuapp.com/professor',
+        url: 'https://sportsfree-dev.herokuapp.com/doador',
         data: param
       };
 
       axios(config)
       .then(function (response) {
-        alert('Professor cadastrado com sucesso!');
+        alert('Doador cadastrado com sucesso!');
         window.history.go(-1)
       })
       .catch(function (error) {

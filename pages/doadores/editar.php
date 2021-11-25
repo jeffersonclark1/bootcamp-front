@@ -39,7 +39,7 @@
 		  <div class="collapse navbar-collapse" id="navbarmain">
 			<ul class="navbar-nav ml-auto">
 			  <li class="nav-item active">
-				<a class="nav-link" href="/bootcamp-front/">Home</a>
+				  <a class="nav-link" href="/bootcamp-front/">Home</a>
 			  </li>
         <li class="nav-item"><a class="nav-link" href="/bootcamp-front/pages/professores/">Professores</a></li>
         <li class="nav-item"><a class="nav-link" href="/bootcamp-front/pages/doadores/">Doadores</a></li>
@@ -68,9 +68,19 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-4">
                   <div class="form-group">
                     <input name="email" id="email" type="text" class="form-control" placeholder="E-mail" required>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <input name="redeSocial" id="redeSocial" type="text" class="form-control" placeholder="Rede Social" required>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <input name="telefone" id="telefone" type="text" class="form-control" placeholder="Celular" required>
                   </div>
                 </div>
               </div>
@@ -188,6 +198,7 @@
     $('#cpf').mask('999.999.999-99');
     $('#rg').mask('99.999.999-9');
     $('#cep').mask('99999-999');
+    $('#telefone').mask('(99) 9 9999-9999');
   });
 
   loader();
@@ -199,16 +210,16 @@
     $("#id").val(param);
     const config = {
       method: 'get',
-      url: 'https://sportsfree-dev.herokuapp.com/professor/'+param,
+      url: 'https://sportsfree-dev.herokuapp.com/doador/'+param,
       headers: { }
     };
     axios(config)
     .then(function (response) {
       $("#nome").val(response.data.nome);
-      $("#email").val(response.data.email);
+      $("#email").val(response.data.contato.email);
       $("#cep").val(response.data.endereco.cep);
       $("#rg").val(response.data.rg);
-      $("#cpf").val(response.data.cpf);
+      $("#cpf").val(response.data.cpfCnpj);
       $("#ufFake").val(response.data.endereco.uf);
       $("#ruaFake").val(response.data.endereco.rua);
       $("#numeroFake").val(response.data.endereco.numero);
@@ -220,6 +231,8 @@
       $("#cidade").val(response.data.endereco.cidade);
       $("#bairro").val(response.data.endereco.bairro);
       $("#complemento").val(response.data.endereco.complemento);
+      $("#redeSocial").val(response.data.contato.redeSocial);
+      $("#telefone").val(response.data.contato.telefones[0]);
     })
     .catch(function (error) {
       console.log(error);
@@ -231,15 +244,21 @@
     const data = {
       "id": $("#id").val(),
       "nome": $("#nome").val(),
-      "email": $("#email").val(),
-      "cpf": $("#cpf").val(),
+      "cpfCnpj": $("#cpf").val(),
       "rg": $("#rg").val(),
+      "contato": {
+        "email": $("#email").val(),
+        "redeSocial": $("#redeSocial").val(),
+        "telefones": [
+          $("#telefone").val()
+        ]
+      },
       "endereco": {
           "cep": $("#cep").val(),
           "cidade": $("#cidade").val(),
           "uf": $("#uf").val(),
           "rua": $("#rua").val(),
-          "numero": $("#numero").val(),
+          "numero": Number($("#numero").val()),
           "bairro": $("#bairro").val(),
           "complemento": $("#complemento").val()
       }
@@ -247,7 +266,7 @@
 
     const config = {
       method: 'put',
-      url: 'https://sportsfree-dev.herokuapp.com/professor',
+      url: 'https://sportsfree-dev.herokuapp.com/doador',
       headers: { 
         'Content-Type': 'application/json'
       },
@@ -256,7 +275,7 @@
 
     axios(config)
     .then(function (response) {
-      alert("Professor alterado com sucesso!")
+      alert("Doador alterado com sucesso!")
       window.history.go(-1)
     })
     .catch(function (error) {
