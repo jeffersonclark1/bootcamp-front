@@ -5,8 +5,8 @@
 <html lang="zxx">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
-  <meta name="author" content="themefisher.com">
+  <meta name="description" content="Esporte para vida toda">
+  <meta name="author" content="MBA Impacta">
 
   <title>Sportfree </title>
 
