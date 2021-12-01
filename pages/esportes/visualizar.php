@@ -38,79 +38,27 @@
 					</p>
             <form id="update" name="update" class="appoinment-form" >
               <div class="row">
+                <div class="col-lg-4">
+                </div>
+                <div class="col-lg-4 justify-center">
+                  <div class="form-group">
+                    <img name="urlImagem" id="urlImagem" type="text" style="width: 400px; height: 400px" class="form-control rounded-circle" placeholder="Foto do esporte" disabled>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                </div>
+              </div>
+              <div class="row">
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <input name="nome" id="nome" type="text" class="form-control" placeholder="Nome completo" disabled>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <input name="email" id="email" type="text" class="form-control" placeholder="E-mail" disabled>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <input name="redeSocial" id="redeSocial" type="text" class="form-control" placeholder="Rede social" disabled>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <input name="telefone" id="telefone" type="text" class="form-control" placeholder="Celular" disabled>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <input name="cpf" id="cpf" type="text" class="form-control" placeholder="CPF" disabled>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <input name="rg" id="rg" type="text" class="form-control" placeholder="RG" disabled>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <input name="cep" id="cep" type="text" class="form-control" placeholder="CEP" disabled>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <input name="cidade" id="cidade" type="text" class="form-control" placeholder="Cidade" disabled>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <input name="uf" id="uf" type="text" class="form-control" placeholder="UF" disabled>
+                    <input name="nome" id="nome" type="text" class="form-control" placeholder="Nome do esporte" disabled>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <input name="rua" id="rua" type="text" class="form-control" placeholder="Endereço" disabled>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <input name="numero" id="numero" type="text" class="form-control" placeholder="Número" disabled>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <input name="bairro" id="bairro" type="text" class="form-control" placeholder="Bairro" disabled>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <input name="complemento" id="complemento" type="text" class="form-control" placeholder="Complemento" disabled>
+                    <input name="descricao" id="descricao" type="text" class="form-control" placeholder="descricao  " disabled>
                   </div>
                 </div>
               </div>
@@ -181,24 +129,15 @@
 				$("#id").val(param);
 				const config = {
           method: 'get',
-          url: 'https://sportsfree-dev.herokuapp.com/doador/'+param,
+          url: 'https://sportsfree-dev.herokuapp.com/esporte/'+param,
           headers: { }
         };
         axios(config)
         .then(function (response) {
 					$("#nome").val(response.data.nome);
-					$("#email").val(response.data.contato.email);
-					$("#cep").val(response.data.endereco.cep);
-					$("#rg").val(response.data.rg);
-					$("#cpf").val(response.data.cpfCnpj);
-          $("#redeSocial").val(response.data.contato.redeSocial);
-          $("#telefone").val(response.data.contato.telefones[0]);
-					$("#uf").val(response.data.endereco.uf);
-					$("#rua").val(response.data.endereco.rua);
-					$("#numero").val(response.data.endereco.numero);
-					$("#cidade").val(response.data.endereco.cidade);
-					$("#bairro").val(response.data.endereco.bairro);
-					$("#complemento").val(response.data.endereco.complemento);
+					$("#descricao").val(response.data.descricao);
+          var edit_save = document.getElementById("urlImagem");
+          edit_save.src = response.data.urlImagem;
         })
         .catch(function (error) {
           console.log(error);

@@ -32,16 +32,16 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9">
-				<label>Professores</label>
+				<label>Esportes</label>
 			</div>
 			<div class="col-md-3 py-3">
-				<a href="cadastro.php" class="btn btn-main btn-round-full">Cadastrar professor</a>
+				<a href="cadastro.php" class="btn btn-main btn-round-full">Cadastrar esporte</a>
 			</div>				
 			<table id="tableProfessores" name="tableProfessores" class="table">
 				<thead>
 					<tr>
 						<th scope="col">#</th>
-						<th scope="col">Nome professores</th>
+						<th scope="col">Nome esporte</th>
 						<th class="text-center" scope="col">#</th>
 						<th class="text-center" scope="col">#</th>
 						<th class="text-center" scope="col">#</th>
@@ -109,21 +109,18 @@
 			function loader(){
 				var config = {
           method: 'get',
-          url: 'https://sportsfree-dev.herokuapp.com/professor',
+          url: 'https://sportsfree-dev.herokuapp.com/esporte',
           headers: { }
         };
 
         axios(config)
         .then(function (response) {
-					// for ( var i ; i < response.data.lenght ; i++ ){
-					// 	console.log(response.data[i]);
-					// }
 					for (var i = 0; i < response.data.length; i++) {
           	$("#tableProfessores").find('tbody').append(`<tr><th scope='row'>${response.data[i].id}</th>
 						<td>${response.data[i].nome}</td>
 						<td class='text-center'><a class='btn btn-main btn-round-full' href='visualizar.php?id=${response.data[i].id}'>Visualizar</a></td>
 						<td class='text-center'><a class='btn btn-main btn-round-full' href='editar.php?id=${response.data[i].id}'>Editar</a></td>
-						<td class='text-center'><button class='btn btn-main btn-round-full excluirProfessor' onclick='excluirProfessor("${response.data[i].id}")' >Excluir</button></td></tr>`);
+						<td class='text-center'><button class='btn btn-main btn-round-full excluirEsportes' onclick='excluirEsportes("${response.data[i].id}")' >Excluir</button></td></tr>`);
 						// more statements
 					}
         })
@@ -132,10 +129,10 @@
         });
 			}			
 			
-			function excluirProfessor(id){
+			function excluirEsportes(id){
 				var config = {
 					method: 'delete',
-					url: 'https://sportsfree-dev.herokuapp.com/professor/'+id,
+					url: 'https://sportsfree-dev.herokuapp.com/esporte/'+id,
 					headers: { }
 				};
 				axios(config)
