@@ -32,7 +32,7 @@
 	<nav class="navbar navbar-expand-lg navigation" id="navbar">
 		<div class="container">
 		 	 <a class="navbar-brand" href="index.html">
-			  	<img src="images/logo.png" alt="" class="img-fluid w-50">
+			  	<img src="images/logo.png" alt="" class="img-fluid w-100">
 			  </a>
 
 		  	<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,18 +44,15 @@
 			  <li class="nav-item active">
 				<a class="nav-link" href="index.html">Home</a>
 			  </li>
-			   <li class="nav-item"><a class="nav-link" href="about.html">Seja um doador</a></li>
-         <li class="nav-item"><a class="nav-link" href="about.html">Contatos</a></li>
-         <li class="nav-item"><a class="nav-link" href="about.html">Saiba mais</a></li>
+			   <li class="nav-item"><a class="nav-link" href="#">Seja um doador</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">Contatos</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">Saiba mais</a></li>
+				 <li class="nav-item"><a class="nav-link btn btn-main btn-round-full text-white" href="/pages/login/">Login</a></li>
 			</ul>
 		  </div>
 		</div>
 	</nav>
 </header>
-	
-
-
-
 <!-- Slider Start -->
 <section class="banner">
 	<div class="container">
@@ -79,29 +76,25 @@
 						<span>Academia estação saude</span>
 						<h4 class="mb-3">Judô</h4>
 						<ul class="w-hours list-unstyled">
-              <li class="d-flex justify-content-between">Sun - Wed : <span>8:00 - 17:00</span></li>
-              <li class="d-flex justify-content-between">Thu - Fri : <span>9:00 - 17:00</span></li>
-              <li class="d-flex justify-content-between">Sat - sun : <span>10:00 - 17:00</span></li>
+              <li class="d-flex justify-content-between">Segunda-feira e Quarta-feira : <span>8:00 - 17:00</span></li>
+              <li class="d-flex justify-content-between">Sábado - Domingo : <span>10:00 - 17:00</span></li>
             </ul>
 					</div>
 				
 					<div class="feature-item mb-5 mb-lg-0">
-						<span>Academia estação saude</span>
-						<h4 class="mb-3">Judô</h4>
+						<span>Academia força e ritmo</span>
+						<h4 class="mb-3">Natação</h4>
 						<ul class="w-hours list-unstyled">
-              <li class="d-flex justify-content-between">Sun - Wed : <span>8:00 - 17:00</span></li>
-              <li class="d-flex justify-content-between">Thu - Fri : <span>9:00 - 17:00</span></li>
-              <li class="d-flex justify-content-between">Sat - sun : <span>10:00 - 17:00</span></li>
+              <li class="d-flex justify-content-between">Quarta-feira a Sexta-feira : <span>9:00 - 17:00</span></li>
             </ul>
 					</div>
 				
 					<div class="feature-item mb-5 mb-lg-0">
-						<span>Academia estação saude</span>
-						<h4 class="mb-3">Judô</h4>
+						<span>Flamengo sport</span>
+						<h4 class="mb-3">Ginástica artística</h4>
 						<ul class="w-hours list-unstyled">
-              <li class="d-flex justify-content-between">Sun - Wed : <span>8:00 - 17:00</span></li>
-              <li class="d-flex justify-content-between">Thu - Fri : <span>9:00 - 17:00</span></li>
-              <li class="d-flex justify-content-between">Sat - sun : <span>10:00 - 17:00</span></li>
+              <li class="d-flex justify-content-between">Terça-feira e Quinta-feira : <span>8:00 - 12:00</span></li>
+              <li class="d-flex justify-content-between">Sábado : <span>10:00 - 13:00</span></li>
             </ul>
 					</div>
 				</div>
@@ -116,31 +109,31 @@
 			<div class="row">
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="counter-stat">
-						<i class="icofont-doctor"></i>
+						<i class="icofont-money-bag"></i>
 						<span class="h3">58</span>k
-						<p>-</p>
+						<p>Total doado</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="counter-stat">
-						<i class="icofont-flag"></i>
-						<span class="h3">700</span>+
-						<p>-</p>
+						<i class="icofont-gym"></i>
+						<span class="h3">120</span>+
+						<p>Academias registradas</p>
 					</div>
 				</div>
 				
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="counter-stat">
-						<i class="icofont-badge"></i>
-						<span class="h3">40</span>+
-						<p>-</p>
+						<i class="icofont-medal-sport"></i>
+						<span class="h3">38</span>+
+						<p>Modalidades</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="counter-stat">
-						<i class="icofont-globe"></i>
+						<i class="icofont-location-pin"></i>
 						<span class="h3">20</span>
-						<p>-</p>
+						<p>Cidades</p>
 					</div>
 				</div>
 			</div>
