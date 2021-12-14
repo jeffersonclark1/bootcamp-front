@@ -11,9 +11,6 @@
 	  
 		  <div class="collapse navbar-collapse" id="navbarmain">
 			<ul class="navbar-nav ml-auto">
-			  <li class="nav-item active">
-				<a class="nav-link" href="/">Home</a>
-			  </li>
         <li class="nav-item"><a class="nav-link" href="/pages/professores/">Professores</a></li>
         <li class="nav-item"><a class="nav-link" href="/pages/doadores/">Doadores</a></li>
 				<li class="nav-item"><a class="nav-link" href="/pages/esportes/">Esportes</a></li>

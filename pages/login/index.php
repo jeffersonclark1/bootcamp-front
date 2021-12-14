@@ -28,7 +28,7 @@
 <header>
 	<nav class="navbar navbar-expand-lg navigation" id="navbar">
 		<div class="container">
-		 	 <a class="navbar-brand" href="index.html">
+		 	 <a class="navbar-brand" href="/">
 			  	<img src="images/logo.png" alt="" class="img-fluid w-100">
 			  </a>
 
@@ -39,7 +39,7 @@
 		  <div class="collapse navbar-collapse" id="navbarmain">
 			<ul class="navbar-nav ml-auto">
 			  <li class="nav-item active">
-				<a class="nav-link" href="index.html">Home</a>
+				<a class="nav-link" href="/">Home</a>
 			  </li>
 			   <li class="nav-item"><a class="nav-link" href="#">Seja um doador</a></li>
          <li class="nav-item"><a class="nav-link" href="#">Contatos</a></li>
@@ -131,7 +131,7 @@
   $("#login").submit(function( event ) {
     event.preventDefault();
     
-    if ( $("#username").val() === "adminsportfree" && $("#password").val() === "passwordadminsport" ){
+    if ( $("#username").val() === "adminsportfree" && $("#password").val() === "  " ){
       window.location.href = "/pages/professores/";
     } else {
       alert("Credenciais inválidas");
