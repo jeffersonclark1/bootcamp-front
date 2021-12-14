@@ -14,7 +14,7 @@
         <li class="nav-item"><a class="nav-link" href="/pages/professores/">Professores</a></li>
         <li class="nav-item"><a class="nav-link" href="/pages/doadores/">Doadores</a></li>
 				<li class="nav-item"><a class="nav-link" href="/pages/esportes/">Esportes</a></li>
-				<li class="nav-item"><a class="nav-link btn btn-main btn-round-full text-white" href="/">Logoff</a></li>
+				<li class="nav-item"><a class="nav-link ml-3 btn btn-main btn-round-full text-white" href="/">Logoff</a></li>
 			</ul>
 		  </div>
 		</div>

@@ -47,7 +47,7 @@
 			   <li class="nav-item"><a class="nav-link" href="#">Seja um doador</a></li>
          <li class="nav-item"><a class="nav-link" href="#">Contatos</a></li>
          <li class="nav-item"><a class="nav-link" href="#">Saiba mais</a></li>
-				 <li class="nav-item"><a class="nav-link btn btn-main btn-round-full text-white" href="/pages/login/">Login</a></li>
+				 <li class="nav-item"><a class="nav-link btn btn-main ml-3 btn-round-full text-white" href="/pages/login/">Login</a></li>
 			</ul>
 		  </div>
 		</div>
@@ -73,27 +73,27 @@
 			<div class="col-lg-12">
 				<div class="feature-block d-lg-flex">
 					<div class="feature-item mb-5 mb-lg-0">
-						<span>Academia estação saude</span>
+						<span>Academia Estação Saúde</span>
 						<h4 class="mb-3">Judô</h4>
 						<ul class="w-hours list-unstyled">
-              <li class="d-flex justify-content-between">Segunda-feira e Quarta-feira : <span>8:00 - 17:00</span></li>
-              <li class="d-flex justify-content-between">Sábado - Domingo : <span>10:00 - 17:00</span></li>
+              <li class="d-flex justify-content-between">Segunda e Quarta : <span>8:00 - 17:00</span></li>
+              <li class="d-flex justify-content-between">Sábado e Domingo : <span>10:00 - 17:00</span></li>
             </ul>
 					</div>
 				
 					<div class="feature-item mb-5 mb-lg-0">
-						<span>Academia força e ritmo</span>
+						<span>Academia Força e Ritmo</span>
 						<h4 class="mb-3">Natação</h4>
 						<ul class="w-hours list-unstyled">
-              <li class="d-flex justify-content-between">Quarta-feira a Sexta-feira : <span>9:00 - 17:00</span></li>
+              <li class="d-flex justify-content-between">Quarta a Sexta : <span>9:00 - 17:00</span></li>
             </ul>
 					</div>
 				
 					<div class="feature-item mb-5 mb-lg-0">
-						<span>Flamengo sport</span>
+						<span>Flamengo Sport</span>
 						<h4 class="mb-3">Ginástica artística</h4>
 						<ul class="w-hours list-unstyled">
-              <li class="d-flex justify-content-between">Terça-feira e Quinta-feira : <span>8:00 - 12:00</span></li>
+              <li class="d-flex justify-content-between">Terça e Quinta : <span>8:00 - 12:00</span></li>
               <li class="d-flex justify-content-between">Sábado : <span>10:00 - 13:00</span></li>
             </ul>
 					</div>
