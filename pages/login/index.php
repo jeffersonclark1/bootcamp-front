@@ -44,7 +44,7 @@
 			   <li class="nav-item"><a class="nav-link" href="#">Seja um doador</a></li>
          <li class="nav-item"><a class="nav-link" href="#">Contatos</a></li>
          <li class="nav-item"><a class="nav-link" href="#">Saiba mais</a></li>
-				 <li class="nav-item"><a class="nav-link btn btn-main btn-round-full text-white" href="#">Login</a></li>
+				 <li class="nav-item"><a class="nav-link btn btn-main ml-3 btn-round-full text-white" href="#">Login</a></li>
 			</ul>
 		  </div>
 		</div>
