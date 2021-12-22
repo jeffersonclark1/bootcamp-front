@@ -36,8 +36,9 @@
 			</div>
 			<div class="col-md-3 py-3">
 				<a href="cadastro.php" class="btn btn-main btn-round-full">Cadastrar professor</a>
-			</div>				
-			<table id="tableProfessores" name="tableProfessores" class="table">
+			</div>
+			<?php include_once('../loading.php') ?>
+			<table id="tableProfessores" name="tableProfessores" style="display:none" class="table">
 				<thead>
 					<tr>
 						<th scope="col">#</th>
@@ -104,7 +105,7 @@
 
 		<script>
 
-			loader();
+			setTimeout(loader, 2000);
 
 			function loader(){
 				var config = {
@@ -115,20 +116,20 @@
 
         axios(config)
         .then(function (response) {
-					// for ( var i ; i < response.data.lenght ; i++ ){
-					// 	console.log(response.data[i]);
-					// }
 					for (var i = 0; i < response.data.length; i++) {
           	$("#tableProfessores").find('tbody').append(`<tr><th scope='row'>${response.data[i].id}</th>
 						<td>${response.data[i].nome}</td>
 						<td class='text-center'><a class='btn btn-main btn-round-full' href='visualizar.php?id=${response.data[i].id}'>Visualizar</a></td>
 						<td class='text-center'><a class='btn btn-main btn-round-full' href='editar.php?id=${response.data[i].id}'>Editar</a></td>
 						<td class='text-center'><button class='btn btn-main btn-round-full excluirProfessor' onclick='excluirProfessor("${response.data[i].id}")' >Excluir</button></td></tr>`);
-						// more statements
+						$("#tableProfessores").css('display','');
+						$("#loadingPage").css('display','none');
 					}
         })
         .catch(function (error) {
           console.log(error);
+					$("#errorPage").css('display','');
+					$("#loadingPage").css('display','none');
         });
 			}			
 			
