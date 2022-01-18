@@ -57,7 +57,7 @@
               <div class="row">
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <input name="descricao" id="descricao" type="text" class="form-control" placeholder="descricao  " disabled>
+                    <textarea name="descricao" id="descricao" type="text" class="form-control" placeholder="Descrição" disabled></textarea>
                   </div>
                 </div>
               </div>
@@ -134,7 +134,7 @@
         axios(config)
         .then(function (response) {
 					$("#nome").val(response.data.nome);
-					$("#descricao").val(response.data.descricao);
+					$("#descricao").html(response.data.descricao);
           var edit_save = document.getElementById("urlImagem");
           edit_save.src = response.data.urlImagem;
         })

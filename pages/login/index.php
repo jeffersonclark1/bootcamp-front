@@ -131,7 +131,7 @@
   $("#login").submit(function( event ) {
     event.preventDefault();
     
-    if ( $("#username").val() === "adminsportfree" && $("#password").val() === "passwordadminsport" ){
+    if ( $("#username").val() === "adminsportfree@sportfree.com" && $("#password").val() === "passwordadminsport" ){
       window.location.href = "/pages/professores/";
     } else {
       alert("Credenciais inválidas");
