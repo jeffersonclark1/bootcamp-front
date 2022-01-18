@@ -33,8 +33,7 @@
 		<div class="row align-items-center">
 			<div class="col-lg col-md">
 				<div class="appoinment-wrap mt-5 mt-lg-0">
-					<h2 class="mb-2 title-color">Alteracao</h2>
-					<p class="mb-4">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+					<h2 class="mb-2 title-color">Alteração</h2>
 					</p>
             <form id="update" name="update" class="appoinment-form" >
               <div class="row">

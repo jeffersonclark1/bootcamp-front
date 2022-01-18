@@ -26,45 +26,34 @@
 <body id="top">
 
 <?php include_once('../header.php') ?>
-	
+
 <!-- Slider Start -->
 <section class="section appoinment">
 	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-lg col-md">
-				<div class="appoinment-wrap mt-5 mt-lg-0">
-					<h2 class="mb-2 title-color">Visualização</h2>
-					</p>
-            <form id="update" name="update" class="appoinment-form" >
-              <div class="row">
-                <div class="col-lg-4">
-                </div>
-                <div class="col-lg-4 justify-center">
-                  <div class="form-group">
-                    <img name="urlImagem" id="urlImagem" type="text" style="width: 400px; height: 400px" class="form-control rounded-circle" placeholder="Foto do esporte" disabled>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <input name="nome" id="nome" type="text" class="form-control" placeholder="Nome do esporte" disabled>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <input name="descricao" id="descricao" type="text" class="form-control" placeholder="descricao  " disabled>
-                  </div>
-                </div>
-              </div>
-              <button  onclick="window.history.go(-1); return false;" class='btn btn-main btn-round-full' type="button">Voltar</button>
-            </form>
-        </div>
+		<div class="row">
+			<div class="col-md-9">
+				<label>Cursos</label>
 			</div>
+			<div class="col-md-3 py-3">
+				<a href="cadastro.php" class="btn btn-main btn-round-full">Cadastrar cursos</a>
+			</div>
+			<?php include_once('../loading.php') ?>
+			<table id="tableDoadores" name="tableDoadores" style="display: none" class="table">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Nome</th>
+						<th scope="col">Dia</th>
+						<th scope="col">Horário início</th>
+						<th scope="col">Horário término</th>
+						<th class="text-center" scope="col">#</th>
+						<th class="text-center" scope="col">#</th>
+						<th class="text-center" scope="col">#</th>
+					</tr>
+				</thead>
+				<tbody id="tbodyList">
+				</tbody>
+			</table>
 		</div>
 	</div>
 </section>
@@ -119,69 +108,54 @@
 
 		<script>
 
-			loader();
+			$(document).ready(async function() {
+				setTimeout(loader, 2000);
+			});
 
 			function loader(){
-				const queryString = window.location.search;
-				const urlParams = new URLSearchParams(queryString);
-				const param = urlParams.get('id')
-				$("#id").val(param);
-				const config = {
+				var config = {
           method: 'get',
-          url: 'https://sportsfree-dev.herokuapp.com/esporte/'+param,
+          url: 'https://sportsfree-dev.herokuapp.com/curso',
           headers: { }
         };
+
         axios(config)
         .then(function (response) {
-					$("#nome").val(response.data.nome);
-					$("#descricao").val(response.data.descricao);
-          var edit_save = document.getElementById("urlImagem");
-          edit_save.src = response.data.urlImagem;
+					for (var i = 0; i < response.data.length; i++) {
+          	$("#tableDoadores").find('tbody').append(`<tr><th scope='row'>${response.data[i].id}</th>
+						<td>${response.data[i].descricao}</td>
+						<td>${response.data[i].dia}</td>
+						<td>${response.data[i].horarioInicio}</td>
+						<td>${response.data[i].horarioFim}</td>
+						<td class='text-center'><a class='btn btn-main btn-round-full' href='visualizar.php?id=${response.data[i].id}'>Visualizar</a></td>
+						<td class='text-center'><a class='btn btn-main btn-round-full' href='editar.php?id=${response.data[i].id}'>Editar</a></td>
+						<td class='text-center'><button class='btn btn-main btn-round-full excluirDoador' onclick='excluirDoador("${response.data[i].id}")' >Excluir</button></td></tr>`);
+						$("#tableDoadores").css('display','');
+						$("#loadingPage").css('display','none');
+					}
         })
+        .catch(function (error) {
+          $("#errorPage").css('display','');
+					$("#loadingPage").css('display','none');
+        });
+			}			
+			
+			function excluirDoador(id){
+				var config = {
+					method: 'delete',
+					url: 'https://sportsfree-dev.herokuapp.com/curso/'+id,
+					headers: { }
+				};
+				axios(config)
+        .then(function (response) {
+					$("#tbodyList").empty();
+					loader();
+					alert('excluido com sucesso');					
+				})
         .catch(function (error) {
           console.log(error);
         });
 			}
-
-			$( "#update" ).submit(function( event ) {
-
-        event.preventDefault();
-				const data = {
-					"id": $("#id").val(),
-					"nome": $("#nome").val(),
-					"email": $("#email").val(),
-					"cpf": $("#cpf").val(),
-					"rg": $("#rg").val(),
-					"endereco": {
-							"cep": $("#cep").val(),
-							"cidade": $("#cidade").val(),
-							"uf": $("#uf").val(),
-							"rua": $("#rua").val(),
-							"numero": $("#numero").val(),
-							"bairro": $("#bairro").val(),
-							"complemento": $("#complemento").val()
-					}
-				}
-
-        const config = {
-          method: 'put',
-					url: 'https://sportsfree-dev.herokuapp.com/professor',
-					headers: { 
-						'Content-Type': 'application/json'
-					},
-					data : data
-        };
-
-        axios(config)
-        .then(function (response) {
-          console.log(JSON.stringify(response.data));
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-
-      });
-
 		</script>
 
   </body>

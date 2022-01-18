@@ -33,7 +33,6 @@
 			<div class="col-lg col-md">
 				<div class="appoinment-wrap mt-5 mt-lg-0">
 					<h2 class="mb-2 title-color">Cadastro</h2>
-					<p class="mb-4">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
 					</p>
             <form id="create" name="create" class="appoinment-form" >
               <div class="row">

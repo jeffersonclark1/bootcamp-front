@@ -38,36 +38,23 @@
               <div class="row">
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <input name="nome" id="nome" type="text" class="form-control" placeholder="Nome completo" required>
+                    <input name="descricao" id="descricao" type="text" class="form-control" placeholder="Descrição" required>
                   </div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-lg-4">
+              <div class="col-lg-6">
                   <div class="form-group">
-                    <input name="email" id="email" type="text" class="form-control" placeholder="E-mail" required>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <input name="redeSocial" id="redeSocial" type="text" class="form-control" placeholder="Rede Social" required>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <input name="telefone" id="telefone" type="text" class="form-control" placeholder="Celular" required>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <input name="cpf" id="cpf" type="text" class="form-control" placeholder="CPF" required>
+                    <select class="form-control" name="esporte" id="esporte" required>
+                      <option value="" disabled selected>Selecione um esporte</option>
+                    </select>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <input name="rg" id="rg" type="text" class="form-control" placeholder="RG" required>
+                    <select class="form-control" name="professor" id="professor" required>
+                    <option value="" disabled selected>Selecione um professor</option>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -113,6 +100,63 @@
                 <div class="col-lg-4">
                   <div class="form-group">
                     <input name="complemento" id="complemento" type="text" class="form-control" placeholder="Complemento" >
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <select class="form-control" name="dia" id="dia" required>
+                    <option value="" disabled selected>Selecione um dia</option>
+                    <option value="Segunda">Segunda</option>
+                    <option value="Terça">Terça</option>
+                    <option value="Quarta">Quarta</option>
+                    <option value="Quinta">Quinta</option>
+                    <option value="Sexta">Sexta</option>
+                    <option value="Sábado">Sábado</option>
+                    <option value="Domingo">Domingo</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <select class="form-control" name="horarioInicio" id="horarioInicio" required>
+                    <option value="" disabled selected>Horário início</option>
+                    <option value="08:00">08:00</option>
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>3
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <select class="form-control" name="horarioFim" id="horarioFim" required>
+                    <option value="" disabled selected>Horário término</option>
+                    <option value="08:00">08:00</option>
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <input class="form-control" type="number" name="quantidadeMaxAlunos" id="quantidadeMaxAlunos" placeholder="Max de alunos" required min="5" max="99">
                   </div>
                 </div>
               </div>
@@ -169,11 +213,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
 
   <script>
-    $(document).ready(function() {
+    $(document).ready(async function() {
         $('#cpf').mask('999.999.999-99');
         $('#rg').mask('99.999.999-9');
         $('#cep').mask('99999-999');
         $('#telefone').mask('(99) 9 9999-9999');
+
+        await loaderEsporte();
+        await loaderProfessor();			
+
     });
     // Attach a submit handler to the form
     $( "#create" ).submit(function( event ) {
@@ -182,36 +230,37 @@
       event.preventDefault();
 
       const param = {
-        "nome": $("#nome").val(),
-        "cpfCnpj": $("#cpf").val(),
-        "rg": $("#rg").val(),
-        "contato": {
-          "email": $("#email").val(),
-          "redeSocial": $("#redeSocial").val(),
-          "telefones": [
-            $("#telefone").val()
-          ]
+        "descricao": $("#descricao").val(),
+        "professor": {
+          "id": Number($("#professor").val()),
         },
-        "endereco": {
-            "cep": $("#cep").val(),
-            "cidade": $("#cidade").val(),
-            "uf": $("#uf").val(),
-            "rua": $("#rua").val(),
-            "numero": Number($("#numero").val()),
-            "bairro": $("#bairro").val(),
-            "complemento": $("#complemento").val()
-        }
+        "esporte" : {
+          "id": Number($("#esporte").val()),
+        },
+        "local": {
+          "cep": $("#cep").val(),
+          "cidade": $("#cidade").val(),
+          "uf": $("#uf").val(),
+          "rua": $("#rua").val(),
+          "numero": $("#numero").val(),
+          "bairro": $("#bairro").val(),
+          "complemento": $("#complemento").val()
+        },
+        "dia": $("#dia").val(),
+        "horarioInicio": $("#horarioInicio").val(),
+        "horarioFim": $("#horarioFim").val(),
+        "quantidadeMaxAlunos": Number($("#quantidadeMaxAlunos").val())
       };
 
       const config = {
         method: 'POST',
-        url: 'https://sportsfree-dev.herokuapp.com/doador',
+        url: 'https://sportsfree-dev.herokuapp.com/curso',
         data: param
       };
 
       axios(config)
       .then(function (response) {
-        alert('Doador cadastrado com sucesso!');
+        alert('Curso cadastrado com sucesso!');
         window.history.go(-1)
       })
       .catch(function (error) {
@@ -245,6 +294,46 @@
         });
       }
     });
+
+    async function loaderEsporte(){
+      var config = {
+        method: 'get',
+        url: 'https://sportsfree-dev.herokuapp.com/esporte',
+        headers: { }
+      };
+
+      axios(config)
+      .then(function (response) {
+        for (var i = 0; i < response.data.length; i++) {
+          $("#esporte").append(`<option value="${response.data[i].id}">${response.data[i].nome}</option>`);
+        }
+      })
+      .catch(function (error) {
+        $("#errorPage").css('display','');
+        $("#loadingPage").css('display','none');
+        console.log(error);
+      });
+    }	
+
+    async function loaderProfessor(){
+      var config = {
+        method: 'get',
+        url: 'https://sportsfree-dev.herokuapp.com/professor',
+        headers: { }
+      };
+
+      axios(config)
+      .then(function (response) {
+        for (var i = 0; i < response.data.length; i++) {
+          $("#professor").append(`<option value="${response.data[i].id}">${response.data[i].nome}</option>`);
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+        $("#errorPage").css('display','');
+        $("#loadingPage").css('display','none');
+      });	
+    }
   </script>
 
   </body>

@@ -36,28 +36,86 @@
 					<h2 class="mb-2 title-color">Visualização</h2>
 					</p>
             <form id="update" name="update" class="appoinment-form" >
+            <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <input name="descricao" id="descricao" type="text" class="form-control" placeholder="Descrição" disabled>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+              <div class="col-lg-6">
+                  <div class="form-group">
+                    <input name="esporte" id="esporte" type="text" class="form-control" placeholder="Esporte" disabled>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input name="professor" id="professor" type="text" class="form-control" placeholder="professor" disabled>
+                  </div>
+                </div>
+              </div>
               <div class="row">
                 <div class="col-lg-4">
-                </div>
-                <div class="col-lg-4 justify-center">
                   <div class="form-group">
-                    <img name="urlImagem" id="urlImagem" type="text" style="width: 400px; height: 400px" class="form-control rounded-circle" placeholder="Foto do esporte" disabled>
+                    <input name="cepFake" id="cepFake" type="text" class="form-control" placeholder="CEP" disabled  >
                   </div>
                 </div>
                 <div class="col-lg-4">
+                  <div class="form-group">
+                    <input name="cidadeFake" id="cidadeFake" type="text" class="form-control" placeholder="Cidade" disabled >
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <input name="ufFake" id="ufFake" type="text" class="form-control" placeholder="UF" disabled>
+                  </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <input name="nome" id="nome" type="text" class="form-control" placeholder="Nome do esporte" disabled>
+                    <input name="ruaFake" id="ruaFake" type="text" class="form-control" placeholder="Endereço" disabled>
                   </div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-4">
                   <div class="form-group">
-                    <input name="descricao" id="descricao" type="text" class="form-control" placeholder="descricao  " disabled>
+                    <input name="numeroFake" id="numeroFake" type="text" class="form-control" placeholder="Número" disabled>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <input name="bairroFake" id="bairroFake" type="text" class="form-control" placeholder="Bairro" disabled>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <input name="complementoFake" id="complementoFake" type="text" class="form-control" placeholder="Complemento" disabled >
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <input name="dia" id="dia" type="text" class="form-control" placeholder="Dia" disabled>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <input name="horarioInicio" id="horarioInicio" type="text" class="form-control" placeholder="Inicio" disabled>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="form-group">
+                      <input name="horarioFim" id="horarioFim" type="text" class="form-control" placeholder="Fim" disabled>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <input class="form-control" type="number" name="quantidadeMaxAlunos" id="quantidadeMaxAlunos" placeholder="Max de alunos" disabled min="5" max="99">
                   </div>
                 </div>
               </div>
@@ -128,15 +186,26 @@
 				$("#id").val(param);
 				const config = {
           method: 'get',
-          url: 'https://sportsfree-dev.herokuapp.com/esporte/'+param,
+          url: 'https://sportsfree-dev.herokuapp.com/curso/'+param,
           headers: { }
         };
         axios(config)
         .then(function (response) {
-					$("#nome").val(response.data.nome);
 					$("#descricao").val(response.data.descricao);
-          var edit_save = document.getElementById("urlImagem");
-          edit_save.src = response.data.urlImagem;
+					$("#esporte").val(response.data.esporte.nome);
+					$("#professor").val(response.data.professor.nome);
+					$("#rg").val(response.data.rg);
+					$("#cepFake").val(response.data.local.cep);
+					$("#ufFake").val(response.data.local.uf);
+					$("#ruaFake").val(response.data.local.rua);
+					$("#numeroFake").val(response.data.local.numero);
+					$("#cidadeFake").val(response.data.local.cidade);
+					$("#bairroFake").val(response.data.local.bairro);
+					$("#complementoFake").val(response.data.local.complemento);
+          $("#dia").val(response.data.dia);
+          $("#horarioInicio").val(response.data.horarioInicio);
+          $("#horarioFim").val(response.data.horarioFim);
+          $("#quantidadeMaxAlunos").val(response.data.quantidadeMaxAlunos);
         })
         .catch(function (error) {
           console.log(error);
