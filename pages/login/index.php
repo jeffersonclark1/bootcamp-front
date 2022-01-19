@@ -63,7 +63,7 @@
               <div class="row">
                 <div class="col-md">
                   <div class="form-group">
-                    <input name="username" id="username" type="text" class="form-control" placeholder="Login" required>
+                    <input name="username" id="username" type="text" class="form-control" placeholder="E-mail" required>
                   </div>
                 </div>
               </div>
